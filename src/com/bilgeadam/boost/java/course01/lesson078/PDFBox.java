@@ -26,7 +26,11 @@ public class PDFBox {
 			content.endText();
 		finally {
 			if (content !=null ) {
-				content.close();
+				try {
+					
+				} catch (Exception e) {
+					//do nothing
+				}
 			}
 		}
 	}
