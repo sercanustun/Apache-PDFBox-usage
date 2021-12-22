@@ -21,7 +21,7 @@ public class PDFboxCreation {
 			createPDFWithImage();
 			readPDF();
 		} catch (IOException e) {
-			System.err.println("PDF iþlenirken hata oluþtu: " + e.getMessage());
+			System.err.println("PDF işlenirken hata olu�tu: " + e.getMessage());
 		}
 		
 	}
@@ -38,13 +38,13 @@ public class PDFboxCreation {
 			
 			content.drawImage(pdImage, 20f, 20f, (float) pdImage.getWidth(), (float) pdImage.getHeight());
 			content.beginText();
-			content.setFont(PDType1Font.TIMES_BOLD, 14); // kullanýlacak font'un belirlenmesi
-			content.setLeading(14.5f); // öndek boþluk
+			content.setFont(PDType1Font.TIMES_BOLD, 14); // kullan�lacak font'un belirlenmesi
+			content.setLeading(14.5f); // �ndek bo�luk
 			content.newLineAtOffset(20, 750); // origin of the page is left-bottom corner
-			String line = "Bir gün okula giderken...";
+			String line = "Bir gun okula giderken...";
 			content.showText(line);
 			
-			content.setFont(PDType1Font.TIMES_BOLD, 11); // kullanýlacak font'un belirlenmesi
+			content.setFont(PDType1Font.TIMES_BOLD, 11); // kullan�lacak font'un belirlenmesi
 			content.newLine();
 			content.showText("her seye dikkat ederken...");
 			content.newLine();
@@ -53,7 +53,7 @@ public class PDFboxCreation {
 			content.endText();
 			content.close();
 			pdf.save(PDFboxCreation.PDF_FILE);
-			System.out.println("PDF yaratıldı.");
+			System.out.println("PDF yarat�ld�");
 		} finally {
 			if (content != null) {
 				try {
@@ -68,7 +68,7 @@ public class PDFboxCreation {
 	private static void readPDF() throws IOException {
 		File pdfFile = new File(PDF_FILE);
 		try (PDDocument pdf = PDDocument.load(pdfFile)) {
-			PDFTextStripper stripper = new PDFTextStripper(); // DFF'ten text okumak için kullanýlan sýnýf
+			PDFTextStripper stripper = new PDFTextStripper(); // DFF'ten text okumak i�in kullan�lan s�n�f
 			String text = stripper.getText(pdf);
 			System.out.println(text);
 		}
@@ -83,12 +83,12 @@ public class PDFboxCreation {
 			content = new PDPageContentStream(pdf, page);
 			
 			content.beginText();
-			content.setFont(PDType1Font.TIMES_BOLD, 14); // kullanýlacak font'un belirlenmesi
-			content.setLeading(14.5f); // öndek boþluk
+			content.setFont(PDType1Font.TIMES_BOLD, 14); // kullan�lacak font'un belirlenmesi
+			content.setLeading(14.5f); // �ndek bo�luk
 			content.newLineAtOffset(20, 750); // origin of the page is left-bottom corner
-			String line = "Bir gün okula giderken...";
+			String line = "Bir g�n okula giderken...";
 			content.showText(line);
-			content.setFont(PDType1Font.TIMES_BOLD, 11); // kullanýlacak font'un belirlenmesi
+			content.setFont(PDType1Font.TIMES_BOLD, 11); // kullan�lacak font'un belirlenmesi
 			content.newLine();
 			content.showText("her seye dikkat ederken...");
 			content.newLine();
@@ -97,7 +97,7 @@ public class PDFboxCreation {
 			content.endText();
 			content.close();
 			pdf.save(PDFboxCreation.PDF_FILE);
-			System.out.println("PDF yaratıldı");
+			System.out.println("PDF yarat�ld�");
 		} finally {
 			if (content != null) {
 				try {
